@@ -1,0 +1,33 @@
+<!--wxml-->
+<map id="myMap" style="width: 100%; height: 55vh;"
+longitude="{{longitude}}" latitude="{{latitude}}"  polyline="{{polyline}}"  markers="{{markers}}" show-location></map>
+
+<!--主体部分-->
+<view class="content" style="display:{{show}}">
+<image class="driverimg" src="../../images/driver.jpg"/>
+<view class="top">
+<text class="licence">{{licence}}</text>
+</view>
+<view class="center">
+<view>
+      <text class="brand">{{brand}}</text>
+      <text class="car_color">{{color}}</text>
+</view>
+</view>
+<view class="bottom">
+<text class="name">{{username}}</text>
+<image class="star" src="../../images/star.jpg"/><text class="star_num">{{star}}.0</text>
+<text class="name">{{order}}单</text>
+</view>
+</view>
+
+<!--底部-->
+<view class="footer" style="display:{{show}}">
+    <view class="footer_one"><image class="icon" src="../../images/icon1.png"/>一键报警</view>
+    <view class="footer_one"><image class="icon" src="../../images/icon2.png"/>发消息</view>
+    <view class="footer_one"><image class="icon" src="../../images/icon3.png"/>打电话</view>
+    <view class="footer_one"><image class="icon" src="../../images/icon4.png"/>取消订单</view>
+    <view class="footer_one"><image class="icon" src="../../images/icon5.png"/>选择路线</view>
+    <view class="footer_one"><image class="icon" src="../../images/icon6.png"/>更多操作</view>
+</view>
+<button style="display:{{show}}" bindtap="payment" class="payment" type="primary">确认付款</button>

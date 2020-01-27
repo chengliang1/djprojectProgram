@@ -1,0 +1,14 @@
+<!--index.wxml-->
+    <map
+      id="myMap"
+      style="width: 100%; height:55vh;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      scale="14"
+      show-location="true"
+      ></map>
+
+  <view class="container">
+  {{ name }}
+  </view>

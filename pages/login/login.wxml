@@ -1,0 +1,23 @@
+<view class='container'>
+<view class="main">
+  <view class='header'>
+    <text>久候代驾平台</text>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class='section'>
+      <text>账号：</text>
+      <input type='text'  placeholder='   账号/手机号/邮箱..' name="username"/>
+    </view>
+    <view class='section'>
+      <text>密码:</text>
+      <input password='true'    placeholder='  请输入密码' name="password"/>
+    </view>
+    <view class='button'>
+      <button type='primary' form-type='submit'>登录</button>
+    </view>
+  </form>
+  </view>
+    <view class='fpwd' bindtap='findpwd'>
+      <text>忘记密码</text>
+    </view>
+</view>

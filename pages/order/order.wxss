@@ -1,0 +1,19 @@
+/* pages/order/order.wxss */
+.start{  
+  display: inline-block;
+  width: 80%;
+  height: 6vh;
+  background:none;  
+  outline:none;  
+  border:1px solid #ccc;
+}
+input:focus{   
+  border:none;
+}
+.main{
+  margin: 0 auto;
+  width: 90%;
+  height: 20vh;
+  border: 1px grey solid;
+  border-radius: 10px;
+}
