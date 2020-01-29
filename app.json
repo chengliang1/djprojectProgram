@@ -2,10 +2,11 @@
   "pages": [
     "pages/order/order",
     "pages/login/login",
-    "pages/index/index",
     "pages/main/main",
     "pages/logs/logs",
-    "pages/payment/payment"
+    "pages/payment/payment",
+    "pages/person/person",
+    "pages/charging/charging"
   ],
   "permission": {
     "scope.userLocation": {

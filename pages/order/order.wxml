@@ -1,15 +1,45 @@
 <view class="page-body">
   <view class="page-section page-section-gap">
-    <map id="qqMap" style="width: 100%; height: 300px;"  latitude="{{latitude}}" longitude="{{longitude}}"  markers="{{markers}}"  scale="16" bindregionchange="mapChange" show-location="true"></map>
+    <map id="qqMap" style="width: 100%; height: 300px;"  latitude="{{latitude}}" longitude="{{longitude}}"  markers="{{markers}}"  scale="16" bindregionchange="mapChange" show-location="true">
+    <cover-view  class="information">
+      <cover-image class="person" bindtap="person" src="../../images/person.png"></cover-image>
+    </cover-view>
+    </map>
   </view>
-  <view class="btn-area">
-    出发地：<input class="start" value="{{mobileLocation.name}}" placeholder="您的位置" type="text" bindtap="moveToLocation"/>
-    目的地：<input class="start" value="{{mobileLocation1.name}}" type="text" bindtap="moveToLocation1"/>
-
-    <view class="main" style="display:{{show}}">
-        {{distance}}
+ 
+    <view class="content">
+    <view class="common">
+      <text class="time_letter">预约时间:</text>
+      <view class="time-picker">
+      <picker  mode="multiSelector" bindchange="bindStartMultiPickerChange" bindtap='pickerTap' bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">{{startDate}}</picker>
+      </view>
     </view>
-    <button bindtap="driving">呼叫司机</button>
-    
+
+    <view class="common">
+    <text class="time_letter">代驾类型:</text>
+    <view class="time-picker">
+    <radio-group class="radio-group" bindchange="radioChange">
+    <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+    <text>{{item.value}}</text>
+    </radio>
+    </radio-group>
+    </view>
+    </view>
+
+    <view class="common">
+    <image class="cirle" src="../../images/green.png"></image>
+     <input class="start" value="{{mobileLocation.name}}" placeholder="您的位置" type="text" bindtap="moveToLocation"/>
+    </view>
+    <view class="common">
+    <image class="cirle" src="../../images/orange.png"></image>
+    <input class="start" value="{{mobileLocation1.name}}" placeholder="您要去去哪里"  type="text" bindtap="moveToLocation1"/>
+    </view>
+    </view>
+    <view class="main" style="display:{{show}}">
+        <view class="footer">全程 <text class="imp">{{distance}}</text> 公里</view>
+        <view class="footer">预计行驶 <text class="tmp">{{duration}}</text> {{unit}}</view>
+        <view class="footer">预估价格 <text class="pri">{{price}}</text> 元</view>
+    </view>
+    <button style="display:{{show}}" class="appointment" bindtap="driving" type="primary">预约司机</button>
   </view>
-</view>
+
