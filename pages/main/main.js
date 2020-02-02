@@ -14,15 +14,39 @@ Page({
         dstLng: 0,
         latitude: 0,
         longitude: 0,
+        show: 'none',
+        //司机信息
+        id:'',
+        name:'',
+        drivername:'',
         licence:'',
         brand:'',
         color:'',
-        username:'',
         star:'',
         order:'',
-        show: 'none',
+        //订单信息
+        username:'',
+        order_Date:'',
+        djtype: '',
+        orgin: '',
+        destination: '',
+        distance: 0,
+        duration: 0,
+        unit: '',
+        price: 0,
+
     },
     onLoad:function(res) {
+        console.log(res)
+        var username = res.username
+        var order_Date = res.order_Date
+        var djtype = res.djtype
+        var orgin = res.orgin
+        var destination = res.destination
+        var distance = res.distance
+        var duration = res.duration
+        var unit = res.unit
+        var price = res.price
         var markers =[{
             id:0,
             iconPath:"../../images/start.png",
@@ -46,7 +70,17 @@ Page({
             dstLat: res.dstLat,
             dstLng: res.dstLng,
             latitude: res.srcLat,
-            longitude: res.srcLng
+            longitude: res.srcLng,
+             //订单信息
+             username: username,
+             order_Date: order_Date,
+             djtype: djtype,
+             orgin: orgin,
+             destination: destination,
+             distance: distance,
+             duration: duration,
+             unit: unit,
+             price: price
         });
         var _this = this;
         wx.request({
@@ -57,10 +91,12 @@ Page({
             if(res.data.data != null){
                 _this.setData({
                     show: '',
+                    id:res.data.data.id,
                     licence:res.data.data.licence,
                     brand:res.data.data.car_brand,
                     color:res.data.data.car_color,
-                    username:res.data.data.username,
+                    drivername:res.data.data.drivername,
+                    name:res.data.data.name,
                     star:res.data.data.driver_star,
                     order:res.data.data.order_num,
                 })
@@ -74,7 +110,7 @@ Page({
           }
         });
         
-        //调用距离计算接口
+        //调用距离计算接口形成路线
         qqmapsdk.direction({
             mode: 'driving',//可选值：'driving'（驾车）、'walking'（步行）、'bicycling'（骑行），不填默认：'driving',可不填
               //from参数不填默认当前地址
@@ -134,7 +170,23 @@ Page({
     payment:function(){
         var that = this
         wx.navigateTo({
-          url: '/pages/payment/payment',
+          url: '/pages/payment/payment?drivername='+that.data.drivername
+          +'&id='+ that.data.id
+          +'&name='+ that.data.name
+          +'&username='+ that.data.username
+          +'&licence='+ that.data.licence
+          +'&brand='+ that.data.brand
+          +'&star='+ that.data.star
+          +'&order='+ that.data.order
+          //订单信息
+          +'&order_Date='+ that.data.order_Date
+          +'&djtype='+ that.data.djtype
+          +'&orgin='+ that.data.orgin
+          +'&destination='+ that.data.destination
+          +'&distance='+ that.data.distance
+          +'&duration='+ that.data.duration
+          +'&unit='+ that.data.unit
+          +'&price='+ that.data.price
         })
     }
 })    

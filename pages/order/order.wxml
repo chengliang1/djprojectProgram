@@ -14,7 +14,6 @@
       <picker  mode="multiSelector" bindchange="bindStartMultiPickerChange" bindtap='pickerTap' bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">{{startDate}}</picker>
       </view>
     </view>
-
     <view class="common">
     <text class="time_letter">代驾类型:</text>
     <view class="time-picker">

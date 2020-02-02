@@ -15,7 +15,7 @@ longitude="{{longitude}}"  latitude="{{latitude}}"  polyline="{{polyline}}"  mar
 </view>
 </view>
 <view class="bottom">
-<text class="name">{{username}}</text>
+<text class="name">{{drivername}}</text>
 <image class="star" src="../../images/star.jpg"/><text class="star_num">{{star}}.0</text>
 <text class="name">{{order}}单</text>
 </view>
@@ -30,4 +30,4 @@ longitude="{{longitude}}"  latitude="{{latitude}}"  polyline="{{polyline}}"  mar
     <view class="footer_one"><image class="icon" src="../../images/icon5.png"/>选择路线</view>
     <view class="footer_one"><image class="icon" src="../../images/icon6.png"/>更多操作</view>
 </view>
-<button style="display:{{show}}" bindtap="payment" class="payment" type="primary">确认付款</button>
+<button style="display:{{show}}" bindtap="payment" class="payment" type="primary">去付款</button>

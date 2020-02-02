@@ -1,2 +1,87 @@
 <!--pages/payment/payment.wxml-->
-<text>付款页面</text>
+<view class="main">
+    <view class="driver_info">
+        <view class="driver">
+        <image class="driver_img" src="../../images/driverlogo.png"></image>
+        </view>
+        <view class="letter">
+            <view class="master">
+                {{drivername}} · {{licence}}
+            </view>
+            <view class="brand">
+                {{brand}}
+            </view>
+            <view class="evaluation">
+           <block wx:for="{{star}}" wx:key="key">
+            <image class="star" src='../../images/shi.png'></image>
+            </block>
+            <block wx:for="{{two_1}}" wx:key="key">
+            <image class="star" src='../../images/kong.png'></image>
+            </block>
+            <view class="score">{{star}}.0</view>
+            <text class="order_num">{{order}}单</text>
+            </view>
+        </view>
+         <view class="phone">
+            <image class="phone_img" src="../../images/pphone.png"></image>
+            </view>
+    </view>
+    <view class="fare">
+        <view class="common">
+            <text class="price_one">车费详情</text>
+        </view>
+        <view class="common">
+            <text class="price_two1">车费合计</text>
+            <text class="price_two2">{{price}}元</text>
+        </view>
+        <view class="common">
+            <text class="price_three1">最低消费</text>
+            <text class="price_three2">{{price}}元</text>
+        </view>
+        <view class="common">
+            <text class="price_four1">优惠合计</text>
+            <text class="price_four2">0元</text>
+        </view>
+        <view class="common">
+            <text class="price_four1">优惠券抵扣</text>
+            <text class="price_four3">0元</text>
+            <image class="price_four" src="../../images/arrow.png"></image>
+        </view>
+    </view>
+    <view class="footer">
+         <view class="common">
+            <text class="price_one">支付方式</text>
+        </view>
+        <view class="common">
+            <image class="wqz_img" src="../../images/wechat.png"/>
+            <view class="wqz_let">微信支付</view>
+            <view class="choose">
+                <radio-group class="radio-group">
+                <radio bindtap="checkedTap1" class="radio" wx:for-items="{{items1}}" wx:key="name" value="{{item1.name}}" checked="{{checked1}}">
+                </radio>
+                </radio-group>
+            </view>
+        </view>
+        <view class="common">
+            <image class="wqz_img" src="../../images/zhifubao.png"/>
+            <view class="wqz_let">支付宝支付</view>
+            <view class="choose">
+                <radio-group class="radio-group">
+                <radio bindtap="checkedTap2" class="radio" wx:for-items="{{items2}}" wx:key="name" value="{{item2.name}}" checked="{{checked2}}">
+                </radio>
+                </radio-group>
+            </view>
+        </view>
+        <view class="common">
+            <image class="wqz_img" src="../../images/qq.png"/>
+            <view class="wqz_let">QQ钱包支付</view>
+            <view class="choose">
+                <radio-group class="radio-group">
+                <radio bindtap="checkedTap3" class="radio" wx:for-items="{{items3}}" wx:key="name" value="{{item3.name}}" checked="{{checked3}}">
+                </radio>
+                </radio-group>
+            </view>
+        </view>
+    </view>
+    <button class="payment" bindtap="payment"  style="width:65%">确认支付{{price}}元</button>
+</view>

@@ -11,6 +11,7 @@ var currentMinute = date.getMinutes();
 
 Page({
    data: {
+      username:'',
       latitude : 0,
       longitude: 0,
       markers: [],
@@ -44,8 +45,12 @@ Page({
        ],
    },
 
-    onLoad: function () {
+    onLoad: function (res) {
       var that = this;
+      var username = res.username;
+      that.setData({
+        username:username
+      })
       this.mapCtx = wx.createMapContext('qqMap');
       //获取位置
       wx.getLocation({
@@ -81,6 +86,7 @@ Page({
          })
       }
    })
+  
 },
     //选起点
    moveToLocation: function () {
@@ -485,14 +491,23 @@ Page({
         url: '/pages/main/main?srcLat='+that.data.mobileLocation.latitude
         +'&srcLng='+ that.data.mobileLocation.longitude
         +'&dstLat='+ that.data.mobileLocation1.latitude
-        +'&dstLng='+ that.data.mobileLocation1.longitude,
+        +'&dstLng='+ that.data.mobileLocation1.longitude
+        +'&username='+ that.data.username
+        +'&order_Date='+ that.data.startDate
+        +'&djtype='+ that.data.djtype
+        +'&orgin='+ that.data.mobileLocation.name
+        +'&destination='+ that.data.mobileLocation1.name
+        +'&duration='+ that.data.duration
+        +'&distance='+ that.data.distance
+        +'&unit='+ that.data.unit
+        +'&price='+ that.data.price
       })
     },
     //跳到个人信息页面
     person: function () {
        var that = this;
        wx.navigateTo({
-         url: '/pages/person/person',
+         url: '/pages/person/person?username='+that.data.username,
        })
     }
  

@@ -2,7 +2,7 @@
 <view class="top">
       <view class="person">
         <image class="person_icon" src="../../images/person_icon.png"></image>
-        <text class="name">admin</text>
+        <text class="name">{{username}}</text>
       </view>
 </view>
 <view class="main">

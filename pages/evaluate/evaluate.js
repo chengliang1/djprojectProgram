@@ -1,38 +1,41 @@
-// pages/person/person.js
+var app = getApp()
+var count = 0;
 Page({
-
+ 
   /**
    * 页面的初始数据
    */
   data: {
-    username: '',
+    num: 4,//后端给的分数,显示相应的星星
+    one_1: '',
+    two_1: '',
+    one_2: 0,
+    two_2: 5
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (res) {
-    var that = this
-    var username = res.username
-    that.setData({
-      username: username
-    })
-      
-  },
-
-  //跳到计费页面
-  charging:function () {
-    wx.navigateTo({
-      url: '/pages/charging/charging',
+  onLoad: function (options) {
+    this.setData({
+      one_1: this.data.num,
+      two_1: 5 - this.data.num
     })
   },
-
-  //回到登录界面
-  Relogin:function () {
-    wx.navigateTo({
-      url: '/pages/login/login',
-    })
-  },
+ //情况二:用户给评分
+ in_xin:function(e){
+  var in_xin = e.currentTarget.dataset.in;
+  var one_2;
+  if (in_xin === 'use_sc2'){
+    one_2 = Number(e.currentTarget.id);
+  } else {
+    one_2 = Number(e.currentTarget.id) + this.data.one_2;
+  }
+  this.setData({
+    one_2: one_2,
+    two_2: 5 - one_2
+  })
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -4,11 +4,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    username: '',
+    password: '',
   },
   formSubmit: function (e) {
-    // console.log(e.detail.value);
-    
+    var that = this
+    var username = e.detail.value.username;
+    var password = e.detail.value.password;
+    that.setData({
+      username: username,
+      password: password
+    })
     wx.request({
       url: 'http://127.0.0.1:8081/smallprogram',
       method:"POST",
@@ -16,11 +22,11 @@ Page({
         username: e.detail.value.username,
         password: e.detail.value.password
       },
+      
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res.data+"-----");
         var resData = res.data;
         if (resData == true) {
           //访问正常
@@ -31,16 +37,15 @@ Page({
             success:function(){
               wx.redirectTo({
                 duration:4000,
-                url: '/pages/order/order',
+                url: '/pages/order/order?username='+that.data.username
               })
               }
           })
         }else{
           wx.showToast({
             icon:"none",
-            title: '登录失败',
+            title: '用户名或密码不正确',
             duration: 3000,
-            
           })
         }
       },
@@ -50,11 +55,13 @@ Page({
       
     })
   },
+
+
 /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
