@@ -42,7 +42,7 @@
             <text class="price_four1">优惠合计</text>
             <text class="price_four2">0元</text>
         </view>
-        <view class="common">
+        <view class="common" bindtap="letter">
             <text class="price_four1">优惠券抵扣</text>
             <text class="price_four3">0元</text>
             <image class="price_four" src="../../images/arrow.png"></image>

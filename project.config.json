@@ -117,6 +117,20 @@
 					"id": -1,
 					"name": "pages/evaluate/evaluate",
 					"pathName": "pages/evaluate/evaluate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/charging/charging",
+					"pathName": "pages/charging/charging",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/coupon/coupon",
+					"pathName": "pages/coupon/coupon",
 					"scene": null
 				}
 			]

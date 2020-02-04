@@ -1,20 +1,58 @@
 <!--pages/test/test.wxml-->
-<view>
-<view>一:显示后台给的评分</view>
-<block wx:for="{{one_1}}" wx:key="key">
-<image class="star" src='../../images/shi.png'></image>
-</block>
-<block wx:for="{{two_1}}" wx:key="key">
-<image class="star" src='../../images/kong.png'></image>
-</block>
+<view class="main">
+    <image class="xian1" src="../../images/xian.png"></image>
+    <image class="xian2" src="../../images/xian.png"></image>
+    <image class="xian3" src="../../images/xian.png"></image>
+    <image class="xian4" src="../../images/xian.png"></image>
+     <view class="driver_info">
+        <view class="driver">
+        <image class="driver_img" src="../../images/driverlogo.png"></image>
+        </view>
+        <view class="letter">
+            <view class="master">
+                {{drivername}} · {{licence}}
+            </view>
+            <view class="evaluation">
+           <block wx:for="{{star}}" wx:key="key">
+            <image class="star" src='../../images/shi.png'></image>
+            </block>
+            <block wx:for="{{two_1}}" wx:key="key">
+            <image class="star" src='../../images/kong.png'></image>
+            </block>
+            <view class="score">{{star}}.0</view>
+            <text class="order_num">{{order}}单</text>
+            </view>
+        </view>
+         <view class="phone">
+            <image class="phone_img" src="../../images/pphone.png"></image>
+            </view>
+    </view>
+    <view class="supay">
+        <view class="supay_one">
+          成功支付
+        </view>
+        <view class="supay_two"> 
+            <view class="content">
+              <text class="supay_three">{{price}}</text>
+              <text>元</text>
+            </view>
+            <text class="supay_four">查询明细 ></text>
+        </view>
+    </view>
+    <view class="footer">
+        <view class="anon">
+          匿名评价
+        </view>
+          <view class="footer_star">
+          <block wx:for="{{one_2}}" wx:key="index">
+          <image catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='../../images/shi.png'></image>
+          </block>
+          <block wx:for="{{two_2}}" wx:key="index">
+          <image catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='../../images/kong.png'></image>
+        </block>
+        </view>
+        <view class="footer_let">您的评价，让我们做得更好</view>
+    </view>
+    <button class="anony" bindtap="anony" type="primary">匿名提交</button>
+
 </view>
-<view>这里num给的是几分就显示几颗星星</view>
- 
-<view style='margin-top:60px;'>二:显示用户选择的评分</view>
-<block wx:for="{{one_2}}" wx:key="index">
-<image catchtap='in_xin' id='{{index+1}}' data-in='use_sc2' src='../../images/shi.png'></image>
-</block>
-<block wx:for="{{two_2}}" wx:key="index">
-<image catchtap='in_xin' id='{{index+1}}' data-in='use_sc' src='../../images/kong.png'></image>
-</block>
-<view>{{one_2}}星</view>

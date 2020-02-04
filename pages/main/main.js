@@ -37,7 +37,6 @@ Page({
 
     },
     onLoad:function(res) {
-        console.log(res)
         var username = res.username
         var order_Date = res.order_Date
         var djtype = res.djtype
@@ -87,7 +86,7 @@ Page({
           url: 'http://127.0.0.1:8081/driverinformation/drivers/getWork',
           method:'GET',
           success:function(res){
-            console.log(JSON.stringify(res.data.data))
+           // console.log(JSON.stringify(res.data.data))
             if(res.data.data != null){
                 _this.setData({
                     show: '',
@@ -127,7 +126,6 @@ Page({
               //console.log(res.result.routes[0].distance)
               //公里
               var distance = (ret.result.routes[0].distance)/1000
-              console.log(distance)
               var coors = ret.result.routes[0].polyline, pl = [];
               //坐标解压（返回的点串坐标，通过前向差分进行压缩）
               var kr = 1000000;
@@ -138,7 +136,7 @@ Page({
               for (var i = 0; i < coors.length; i += 2) {
                   pl.push({ latitude: coors[i], longitude: coors[i + 1] })
               }
-              console.log(pl)
+             //console.log(pl)
               //设置polyline属性，将路线显示出来,将解压坐标第一个数据作为起点
               _this.setData({
                   latitude:pl[0].latitude,
@@ -159,7 +157,7 @@ Page({
               console.error(error);
           },
           complete: function (res) {
-              console.log(res);
+             // console.log(res);
            }
        });
 

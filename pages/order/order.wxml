@@ -31,7 +31,7 @@
     </view>
     <view class="common">
     <image class="cirle" src="../../images/orange.png"></image>
-    <input class="start" value="{{mobileLocation1.name}}" placeholder="您要去去哪里"  type="text" bindtap="moveToLocation1"/>
+    <input class="start" value="{{mobileLocation1.name}}" placeholder="您要去哪里"  type="text" bindtap="moveToLocation1"/>
     </view>
     </view>
     <view class="main" style="display:{{show}}">

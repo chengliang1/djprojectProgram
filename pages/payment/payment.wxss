@@ -40,13 +40,6 @@ Page{
   font-size: 19px;
   line-height: 35px;
 }
-.brand{
-  width: 100%;
-  height: 24px;
-  font-size: 17px;
-  line-height: 16px;
-  color: #696969;
-}
 .evaluation{
   width: 100%;
   height: 25px;

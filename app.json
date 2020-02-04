@@ -7,7 +7,8 @@
     "pages/payment/payment",
     "pages/person/person",
     "pages/charging/charging",
-    "pages/evaluate/evaluate"
+    "pages/evaluate/evaluate",
+    "pages/coupon/coupon"
   ],
   "permission": {
     "scope.userLocation": {

@@ -1,44 +1,18 @@
-// pages/person/person.js
+// pages/coupon/coupon.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    username: '',
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (res) {
-    var that = this
-    var username = res.username
-    that.setData({
-      username: username
-    })
-      
-  },
+  onLoad: function (options) {
 
-  //跳到计费页面
-  charging:function () {
-    wx.navigateTo({
-      url: '/pages/charging/charging',
-    })
-  },
-
-  //跳转优惠券页面
-  letter: function () {
-    wx.navigateTo({
-      url: '/pages/coupon/coupon',
-    })
-  },
-
-  //回到登录界面
-  Relogin:function () {
-    wx.navigateTo({
-      url: '/pages/login/login',
-    })
   },
 
   /**

@@ -1,0 +1,4 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="main">
+  <image  src="../../images/charging.jpg"></image>
+</view>

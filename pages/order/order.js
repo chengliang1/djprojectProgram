@@ -154,7 +154,6 @@ Page({
                  longitude: that.data.mobileLocation1.longitude
              }, 
              success: function (res) {
-                console.log(res)
                  var ret = res
                  //时间
                  var duration;
@@ -205,7 +204,7 @@ Page({
                  console.error(error);
              },
                complete: function (res) {
-                  console.log(res);
+                 
               }
           });
          },

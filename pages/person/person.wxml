@@ -11,8 +11,8 @@
           <text class="letter">订单</text>
           <image class="arrow" src="../../images/arrow.png"></image>
         </view>
-        <view class="common" >
-          <text class="letter">代驾卷</text>
+        <view  bindtap="letter" class="common">
+          <text  class="letter">代驾卷</text>
           <image class="arrow" src="../../images/arrow.png"></image>
         </view>
         <view class="common" bindtap="charging">

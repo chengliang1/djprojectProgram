@@ -1,4 +1,5 @@
 // pages/payment/payment.js
+
 Page({
 
   /**
@@ -11,9 +12,9 @@ Page({
     brand: '',
     star: 0,
     order: '',
-    num: 2,
     two_1: 0,
     //订单信息
+    orderid: '',
     username: '',
     order_Date:'',
     djtype: '',
@@ -24,7 +25,7 @@ Page({
     unit: '',
     price: 0,
     //支付方式
-    checked1: false,
+    checked1: true,
     checked2: false,
     checked3: false,
     items1: [
@@ -43,7 +44,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (res) {
-    console.log(res)
+
     var that = this
     //司机信息
     var id = res.id
@@ -53,6 +54,22 @@ Page({
     var brand = res.brand
     var star = res.star
     var order = res.order
+
+    //利用时间和随机数生成订单编号
+    var timestamp = Date.parse(new Date());
+    var date = new Date(timestamp);
+    //获取年份  
+    var Y =date.getFullYear();
+    //获取月份  
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    //获取当日日期 
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
+    var hour = date.getHours()
+    var minute = date.getMinutes()
+    var second = date.getSeconds()
+    var orderid = id + Y + M +  D + hour + minute + second
+    //console.log(orderid);
+
     //订单信息
     var username =res.username
     var order_Date = res.order_Date
@@ -65,6 +82,7 @@ Page({
     var price = res.price
     
     that.setData({
+      orderid: orderid,
       id: id,
       name: name,
       drivername: drivername,
@@ -73,6 +91,7 @@ Page({
       star: star - 0,
       order:order,
       //订单信息
+      orderid: orderid,
       username: username,
       order_Date: order_Date,
       djtype: djtype,
@@ -120,6 +139,7 @@ Page({
       url: 'http://127.0.0.1:8081/orderinformation/orders/orderSave',
       method: "GET",
       data: {
+        orderid:that.data.orderid,
         id:that.data.id,
         name: that.data.name,
         username: that.data.username,
@@ -146,7 +166,13 @@ Page({
             success:function(){
               wx.redirectTo({
                 duration:5000,
-                url: '/pages/evaluate/evaluate?username='+that.data.username
+                url: '/pages/evaluate/evaluate?drivername='+that.data.drivername
+                +'&orderid='+ that.data.orderid
+                +'&username='+ that.data.username
+                +'&licence='+ that.data.licence
+                +'&star='+ that.data.star
+                +'&order='+ that.data.order
+                +'&price='+ that.data.price
               })
               }
           })
@@ -161,6 +187,13 @@ Page({
       error:function(res){
         console.log("error"+res)
       }
+    })
+  },
+
+  //跳转优惠券页面
+  letter: function () {
+    wx.navigateTo({
+      url: '/pages/coupon/coupon',
     })
   },
 

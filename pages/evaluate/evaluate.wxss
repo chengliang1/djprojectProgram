@@ -1,6 +1,182 @@
 /* pages/test/test.wxss */
+Page{
+  margin: 0;
+  padding: 0;
+}
+.main{
+  width: 100%;
+  height: 100vh;
+}
+.driver_info{
+  width: 100%;
+  height: 13vh; 
+}
+.driver{
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  float: left;
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  background-color: #F7F7F7;
+}
+.driver_img{
+  width: 86px;
+  height: 86px;
+}
 image{
-  height: 60rpx;
-  width: 60rpx;
+  height: 80rpx;
+  width: 80rpx;
   display: inline-block
 }
+.letter{
+  width: 190px;
+  height: 12vh;
+  float: left;
+  position: absolute;
+  top: 10px;
+  left: 116px;
+}
+.master{
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 35px;
+}
+.brand{
+  width: 100%;
+  height: 24px;
+  font-size: 17px;
+  line-height: 16px;
+  color: #696969;
+}
+.evaluation{
+  width: 100%;
+  height: 25px;
+}
+.star{
+  height: 30rpx;
+  width: 30rpx;
+  display: inline-block
+}
+.score{
+  margin-left: 10px;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  text-align: center;
+  background-color: orange;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.order_num{
+  margin-left: 10px;
+}
+.phone{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 27px;
+  right: 24px;
+  border-radius: 25px;
+  border: 1px orange solid;
+}
+.phone_img{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 5px;
+  right: -6px;
+}
+.supay{
+  width: 65%;
+  height: 25vh;
+  margin: 0 auto;
+}
+.supay_one{
+  width: 100%;
+  height: 4vh;
+  text-align: center;
+  color: gray;
+  line-height: 26px;
+}
+.supay_two{
+  width: 100%;
+  height: 15vh;
+}
+.content{
+  margin-top: 18px;
+}
+.supay_three{
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 89px;
+  text-align: center;
+  font-size: 40px;
+}
+.supay_four{
+  display: inline-block;
+  width: 100%;
+  height: 4vh;
+  color: #696969;
+  font-size: 12px;
+  text-align: center;
+}
+.xian1{
+  width: 96px;
+  position: relative;
+  top: 129px;
+  left: 76px;
+}
+.xian2{
+  width: 96px;
+  position: relative;
+  top: 129px;
+  left: 146px;
+}
+.xian3{
+  width: 96px;
+  position: relative;
+  top: 280px;
+  left: -123px;
+}
+.xian4{
+  width: 96px;
+  position: relative;
+  top: 281px;
+  left: -47px;
+}
+.footer{
+  width: 78%;
+  height: 20vh;
+  margin: 0 auto;
+  margin-top: -18px;
+}
+.anon{
+  width: 100%;
+  height: 4vh;
+  text-align: center;
+  color: gray;
+  line-height: 26px;
+}
+.footer_star{
+  margin-top: 32px;
+  padding-top: 10px;
+  padding-left: 54px;
+}
+.footer_let{
+  width: 100%;
+  height: 3vh;
+  color: #FF8600;
+  font-size: 13px;
+  text-align: center;
+}
+.anony{
+  margin-top: 120px;
+}
+
+
+
