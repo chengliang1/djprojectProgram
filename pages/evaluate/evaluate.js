@@ -81,7 +81,7 @@ Page({
           wx.showToast({
             title: '感谢您的选择',
             icon:'loading',
-            duration: 4000,
+            duration: 8000,
             success:function(){
              wx.navigateTo({
                url: '/pages/order/order?username='+that.data.username

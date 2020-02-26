@@ -10,6 +10,7 @@ Page({
     drivername: '',
     licence: '',
     brand: '',
+    color: '',
     star: 0,
     order: '',
     two_1: 0,
@@ -52,6 +53,7 @@ Page({
     var drivername = res.drivername
     var licence = res.licence
     var brand = res.brand
+    var color = res.color
     var star = res.star
     var order = res.order
 
@@ -88,6 +90,7 @@ Page({
       drivername: drivername,
       licence: licence,
       brand: brand,
+      color: color,
       star: star - 0,
       order:order,
       //订单信息

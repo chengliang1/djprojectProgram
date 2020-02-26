@@ -31,7 +31,7 @@ Page({
         if (resData == true) {
           //访问正常
           wx.showToast({
-            title: '登录成功',
+            title: '玩命加载中...',
             icon:'loading',
             duration: 3000,
             success:function(){

@@ -483,7 +483,7 @@ Page({
       })
      // console.log('radio发生change事件，携带value值为：', e.detail.value)
     },
-   //呼叫司机
+   //预约司机
     driving:function(){
        var that = this;
       wx.navigateTo({

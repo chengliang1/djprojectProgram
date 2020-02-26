@@ -144,7 +144,7 @@ Page({
                   polyline: [{
                       points: pl,
                       //color: '#FF0000DD',
-                      color:'#3299CC',
+                      color:'#1ab639',
                       width: 5,
                       borderWidth:5,
                       arrowLine:true,
@@ -164,6 +164,35 @@ Page({
         
     },
 
+    //取消订单
+    cancel:function () {
+        var that = this;
+        wx.showModal({
+            title: '提示',
+            content: '3分钟内可免费取消',
+            success: function(res){
+            if (res.confirm) {
+                wx.request({
+                    url: 'http://127.0.0.1:8081/orderinformation/orders/cancel',
+                    method:'GET',
+                    data: {
+                        id: that.data.id
+                    },
+                    success:function (res) {
+                        var resData = res.data;
+                        if(resData == true){
+                            wx.navigateTo({
+                                url: '/pages/order/order?username='+that.data.username
+                            })
+                        }
+                }
+            })
+            } else if (res.cancel) {
+            }
+        }
+        })   
+    },
+
     //进入付款页面
     payment:function(){
         var that = this
@@ -174,6 +203,7 @@ Page({
           +'&username='+ that.data.username
           +'&licence='+ that.data.licence
           +'&brand='+ that.data.brand
+          +'&color='+ that.data.color
           +'&star='+ that.data.star
           +'&order='+ that.data.order
           //订单信息

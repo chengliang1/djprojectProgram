@@ -2,14 +2,14 @@
 <view class="main">
     <view class="driver_info">
         <view class="driver">
-        <image class="driver_img" src="../../images/driverlogo.png"></image>
+        <image class="driver_img" src="../../images/mapdriver.png"></image>
         </view>
         <view class="letter">
             <view class="master">
                 {{drivername}} · {{licence}}
             </view>
             <view class="brand">
-                {{brand}}
+                {{brand}}  {{color}}
             </view>
             <view class="evaluation">
            <block wx:for="{{star}}" wx:key="key">
