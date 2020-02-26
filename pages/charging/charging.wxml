@@ -1,2 +1,169 @@
-<!--pages/charging/charging.wxml-->
+<view class='ticket-container'>
+    <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"
+      scroll-top="{{scrollTop}}">
+      <!--Tab布局-->
+      <view class='title'>
+        <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+          <text>普通代驾</text>
+          <hr class="line-style"/>
+        </view>
+        <view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+          <text>长途代驾</text>
+          <hr class="line-style"/>
+        </view>
+        <view class="{{2 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='2'>
+          <text>女司机代驾</text>
+          <hr class="line-style" />
+        </view>
+      </view>
+ 
+      <!--内容布局-->
+      <swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
+        <swiper-item class='swiper'>
+          <view class="userorder">
+              车主下单（含预约）
+          </view>
+          <view class="information">
+              企业客户(含VIP及权益优惠券类客户)执行定制计费规则，以实际订单费用为准
+          </view>
+          <view class="main">
+            <view class="type-price">
+              <view class="de-title">费用类型(开始行使时间)</view>
+              <view class="de-price">费用</view>
+            </view>
+            <view class="start-price">起步价</view>
+            <view class="start-info">实际计费以开车时间为准,超出部分加收里程费</view>
+            <view class="time-price">
+              <view class="cl-time">05:00-21:59</view>
+              <view class="cl-price">25元(5公里内)</view>
+            </view>
+            <view class="time-price">
+              <view class="cl-time">22:00-22:59</view>
+              <view class="cl-price">35元(5公里内)</view>
+            </view>
+            <view class="time-price">
+              <view class="cl-time">23:00-01:59</view>
+              <view class="cl-price">45元(5公里内)</view>
+            </view>
+            <view class="time-price">
+              <view class="cl-time">02:00-04:59</view>
+              <view class="cl-price">65元(5公里内)</view>
+            </view>
+            <view class="dis-price">里程费</view>
+            <view class="dis-info">超出起步里程,按照时间档位收取里程费</view>
+            <view class="time-price">
+              <view class="cl-time">05:00-21:59</view>
+              <view class="cl-price">6元/公里</view>
+            </view>
+            <view class="time-price">
+              <view class="cl-time">22:00-22:59</view>
+              <view class="cl-price">6元/公里</view>
+            </view>
+            <view class="time-price">
+              <view class="cl-time">23:00-01:59</view>
+              <view class="cl-price">6元/公里</view>
+            </view>
+            <view class="time-price">
+              <view class="cl-time">02:00-04:59</view>
+              <view class="cl-price">6元/公里</view>
+            </view>
+           </view> 
+           <view class="footer">
+              <view class="include">
+                <view class="foot-left">
+                      *计费规则:
+                </view>
+                <view class="foot-right">
+                    公里数不足整数公里时,取整计费。时间数不足整数分钟时,取整计费。
+                </view>
+              </view>
+              <view class="include1">
+                <view class="foot-left">
+                      *起步价:
+                </view>
+                <view class="foot-right">
+                    费用以实际开车时间为准。
+                </view>
+              </view>
+              <view class="include">
+                <view class="foot-left">
+                      *等候费:
+                </view>
+                <view class="foot-right">
+                    司机免费等候10分钟,每超出1分钟收取一元。
+                </view>
+              </view>
+              <view class="include">
+                <view class="foot-left">
+                      *动态加价:
+                </view>
+                <view class="foot-right">
+                    在订单高峰需求过旺时,平台会临时调价以保障您的出行。
+                </view>
+              </view>
+              <view class="include">
+                <view class="foot-left">
+                      *增值服务费:
+                </view>
+                <view class="foot-right">
+                    当前城市如开通增值服务费功能,用户在下单选择时会加收对应功能的增值服务费。
+                </view>
+              </view>
+           </view>
+        </swiper-item>
 
+        <swiper-item class='swiper' class='swiper'>
+          <view class="userorder">
+              长途代驾
+          </view>
+          <view class="center">
+              <view class="one-left">开车时间</view>
+              <view class="one-right">起步价</view>
+              <view class="two-left">0:00:00 - 24:00:00</view>
+              <view class="two-right">
+                      <view class="two-right-prc">￥121.00</view>
+                      <view class="two-right-bot">含30公里</view>
+              </view>
+          </view>
+           <view class="footer">
+              <view class="include">
+                <view class="foot-left">
+                      *计费规则:
+                </view>
+                <view class="foot-right">
+                    公里数不足整数公里时,取整计费。时间数不足整数分钟时,取整计费。
+                </view>
+              </view>
+              <view class="include">
+                <view class="foot-left">
+                      *里程数:
+                </view>
+                <view class="foot-right">
+                    代驾距离超过30公里后，每超过10公里加收20元,不足10公里按10公里计算。
+                </view>
+              </view>
+              <view class="include">
+                <view class="foot-left">
+                      *等候费:
+                </view>
+                <view class="foot-right">
+                    司机免费等候10分钟,每超出1分钟收取一元。
+                </view>
+              </view>
+              <view class="include">
+                <view class="foot-left">
+                      *其他费用:
+                </view>
+                <view class="foot-right">
+                    高速费,路桥费,停车费等其它费用由用户自己承担。
+                </view>
+              </view>
+           </view>
+        </swiper-item>
+
+        <swiper-item class='swiper' class='swiper'>
+          <image src="../../images/girl.png"></image>
+        </swiper-item>
+      </swiper>
+    </scroll-view>
+</view>
