@@ -34,7 +34,7 @@ Page({
       djtype: 'JH',
       
       //日期选择
-      startDate: "日期选择",
+      startDate: '日期选择',
       multiArray: [['今天', '明天', '3-2', '3-3', '3-4', '3-5'], [0, 1, 2, 3, 4, 5, 6], [0, 10, 20]],
       multiIndex: [0, 0, 0],
       //代驾类型
@@ -486,6 +486,13 @@ Page({
    //预约司机
     driving:function(){
        var that = this;
+       if(that.data.startDate == "日期选择"){
+        wx.showToast({
+          title: '预约时间不能为空',
+          icon: 'none',
+          duration: 3000
+        })
+    }else{
       wx.navigateTo({
         url: '/pages/main/main?srcLat='+that.data.mobileLocation.latitude
         +'&srcLng='+ that.data.mobileLocation.longitude
@@ -501,6 +508,8 @@ Page({
         +'&unit='+ that.data.unit
         +'&price='+ that.data.price
       })
+    }
+      
     },
     //跳到个人信息页面
     person: function () {

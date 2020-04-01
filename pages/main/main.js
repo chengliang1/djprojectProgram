@@ -196,25 +196,26 @@ Page({
     //进入付款页面
     payment:function(){
         var that = this
-        wx.navigateTo({
-          url: '/pages/payment/payment?drivername='+that.data.drivername
-          +'&id='+ that.data.id
-          +'&name='+ that.data.name
-          +'&username='+ that.data.username
-          +'&licence='+ that.data.licence
-          +'&brand='+ that.data.brand
-          +'&color='+ that.data.color
-          +'&star='+ that.data.star
-          +'&order='+ that.data.order
-          //订单信息
-          +'&order_Date='+ that.data.order_Date
-          +'&djtype='+ that.data.djtype
-          +'&orgin='+ that.data.orgin
-          +'&destination='+ that.data.destination
-          +'&distance='+ that.data.distance
-          +'&duration='+ that.data.duration
-          +'&unit='+ that.data.unit
-          +'&price='+ that.data.price
-        })
+            wx.navigateTo({
+                url: '/pages/payment/payment?drivername='+that.data.drivername
+                +'&id='+ that.data.id
+                +'&name='+ that.data.name
+                +'&username='+ that.data.username
+                +'&licence='+ that.data.licence
+                +'&brand='+ that.data.brand
+                +'&color='+ that.data.color
+                +'&star='+ that.data.star
+                +'&order='+ that.data.order
+                //订单信息
+                +'&order_Date='+ that.data.order_Date
+                +'&djtype='+ that.data.djtype
+                +'&orgin='+ that.data.orgin
+                +'&destination='+ that.data.destination
+                +'&distance='+ that.data.distance
+                +'&duration='+ that.data.duration
+                +'&unit='+ that.data.unit
+                +'&price='+ that.data.price
+              })
+        
     }
 })    
